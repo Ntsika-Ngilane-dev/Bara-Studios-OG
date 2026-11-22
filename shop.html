@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5ebdd">
+    <meta name="description" content="Choose your destination: visit the Bara Shop or Canna Shop.">
+    <title>Shop — Bara Studios</title>
+    <link rel="icon" href="jk.jpeg" type="image/jpeg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+    <script src="shop.js" defer></script>
+    <script src="pwa.js" defer></script>
+  </head>
+  <body class="shop-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="index.html" aria-label="Bara Studios home">
+          <img class="wordmark-icon" src="jk.jpeg" alt="">
+          <span class="wordmark-name">BARA <span>STUDIOS</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="sr-only">Open navigation</span><span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+          <a href="index.html#services">What we do</a>
+          <a href="index.html#about">Our story</a>
+          <a href="index.html#values">Our approach</a>
+          <a href="shop.html" aria-current="page">Shop</a>
+          <a class="nav-cta" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="shop-hero">
+        <div class="shop-hero-inner">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE SOMETHING FOR EVERYONE</p>
+          <h1>Pick your<br><em>kind of good.</em></h1>
+          <p>Two shops and a studio full of services. Choose the place you came for.</p>
+          <span class="shop-hero-star" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="shop-choices section-shell" aria-label="Choose a shop">
+        <a class="shop-choice shop-choice-bara reveal" href="bara-shop.html">
+          <div class="choice-art">
+            <span class="choice-overline">THE ORIGINAL</span>
+            <img src="jk.jpeg" alt="Bara the capybara mascot" loading="lazy">
+            <span class="choice-orbit" aria-hidden="true">✳</span>
+          </div>
+          <div class="choice-copy">
+            <span class="choice-index">01 / 02</span>
+            <p class="eyebrow">MADE WITH BARA CALM</p>
+            <h2>Bara Shop</h2>
+            <p>Thoughtful merch and little pieces of Bara Studios to bring along for the ride.</p>
+            <span class="choice-link">Enter Bara Shop <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+
+        <a class="shop-choice shop-choice-canna reveal" href="canna-shop.html">
+          <div class="choice-art">
+            <span class="choice-overline">A NEW GROWTH</span>
+            <svg class="canna-mark" viewBox="0 0 180 180" role="img" aria-label="Leaf illustration">
+              <circle cx="90" cy="90" r="77" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M88 137c-5-27-4-55 7-88M91 102c-25-3-39-15-44-35 22 2 38 12 48 30M94 81c-1-21 7-37 25-49 7 20 1 38-18 54M87 121c-20-1-34-10-43-27 21 0 36 7 46 21M96 62c12 5 22 14 29 28" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M47 67c22 2 38 12 48 30M119 32c7 20 1 38-18 54M44 94c21 0 36 7 46 21" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
+            </svg>
+            <span class="choice-orbit" aria-hidden="true">✳</span>
+          </div>
+          <div class="choice-copy">
+            <span class="choice-index">02 / 02</span>
+            <p class="eyebrow">A SEPARATE SHOP SPACE</p>
+            <h2>Canna Shop</h2>
+            <p>A dedicated home for the Canna collection, with its own look and feel.</p>
+            <span class="choice-link">Enter Canna Shop <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+
+        <a class="shop-choice shop-choice-services reveal" href="bara-services-shop.html">
+          <div class="choice-art">
+            <span class="choice-overline">IDEAS INTO ACTION</span>
+            <svg class="services-mark" viewBox="0 0 180 180" role="img" aria-label="Creative services illustration">
+              <circle cx="90" cy="90" r="77" fill="none" stroke="currentColor" stroke-width="1"/>
+              <path d="M47 120h86M58 120V70h64v50M72 70V55h36v15M72 88h36M72 101h24M47 132h86" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m105 102 20-20 9 9-20 20-12 3 3-12ZM120 87l9 9M65 132v8M115 132v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="choice-orbit" aria-hidden="true">✳</span>
+          </div>
+          <div class="choice-copy">
+            <span class="choice-index">03 / 03</span>
+            <p class="eyebrow">CREATIVE. CODE. CREATE IMPACT.</p>
+            <h2>Bara Services</h2>
+            <p>Explore the studio’s creative, digital, media, marketing, and learning services.</p>
+            <span class="choice-link">Explore services <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      </section>
+      <div class="shop-bottom-note section-shell">
+        <span class="note-rule"></span>
+        <p>Different collections, same care in the details.</p>
+        <span class="note-rule"></span>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main section-shell">
+        <a class="wordmark footer-wordmark" href="index.html" aria-label="Bara Studios home">
+          <img class="wordmark-icon" src="jk.jpeg" alt="">
+          <span class="wordmark-name">BARA <span>STUDIOS</span></span>
+        </a>
+        <p>Creative. Code. Create impact.<br><span>Always creating. Always growing.</span></p>
+        <a class="footer-up" href="index.html">Back to the studio <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-bottom section-shell">
+        <span>© <span class="current-year"></span> Bara Studios</span>
+        <span>Made with care, and a little capybara calm.</span>
+        <span class="social-handle">@barastudios</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5ebdd">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin — Bara Studios</title>
+    <link rel="icon" href="jk.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <main class="login-view" id="login-view">
+      <a class="admin-brand" href="/" aria-label="Bara Studios home">
+        <img src="jk.jpeg" alt="">
+        <span>BARA <small>STUDIOS</small></span>
+      </a>
+      <section class="login-card">
+        <p class="eyebrow">PRIVATE WORKSPACE</p>
+        <h1>Welcome back.</h1>
+        <p class="muted">Sign in to manage clients, store activity, enquiries, and supply orders.</p>
+        <form id="login-form">
+          <label for="login-email">Admin email</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" required>
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="button button-primary" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+          <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
+        </form>
+        <a class="back-link" href="/">← Back to Bara Studios</a>
+      </section>
+      <p class="login-footnote">Private admin area · Your account data is not cached for offline use</p>
+    </main>
+
+    <div class="admin-shell" id="admin-shell" hidden>
+      <aside class="sidebar" id="sidebar">
+        <a class="admin-brand" href="/" aria-label="Bara Studios home">
+          <img src="jk.jpeg" alt="">
+          <span>BARA <small>STUDIOS</small></span>
+        </a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="side-nav" aria-label="Admin sections">
+          <button class="side-link is-active" type="button" data-view="overview"><span>◫</span> Overview</button>
+          <button class="side-link" type="button" data-view="clients"><span>♧</span> Clients</button>
+          <button class="side-link" type="button" data-view="store"><span>▣</span> Store</button>
+          <button class="side-link" type="button" data-view="suppliers"><span>↔</span> Suppliers</button>
+          <button class="side-link" type="button" data-view="enquiries"><span>✉</span> Enquiries <b class="nav-count" id="enquiry-count" hidden>0</b></button>
+          <button class="side-link" type="button" data-view="alerts"><span>◉</span> Alerts <b class="nav-count" id="alert-count" hidden>0</b></button>
+          <button class="side-link" type="button" data-view="assistant"><span>✳</span> AI assistant</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <span class="secure-mark"><span></span> Owner-only workspace</span>
+          <button class="side-link sign-out" id="logout-button" type="button"><span>↪</span> Sign out</button>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open dashboard menu">☰</button>
+          <div class="breadcrumb"><span>Bara Studios</span><span aria-hidden="true">/</span><strong id="current-section">Overview</strong></div>
+          <div class="account-chip"><span class="account-avatar">B</span><span id="account-email">Admin</span></div>
+        </header>
+
+        <main class="content">
+          <p class="global-message" id="global-message" role="status" aria-live="polite"></p>
+
+          <section class="view is-visible" id="view-overview" data-view-panel="overview">
+            <div class="page-heading">
+              <div><p class="eyebrow">YOUR STUDIO, AT A GLANCE</p><h1>Good to see you.</h1><p class="muted">A clear view of clients, enquiries, and sales.</p></div>
+              <span class="date-pill" id="today-label"></span>
+            </div>
+            <div class="metric-grid" id="overview-metrics"></div>
+            <div class="dashboard-grid">
+              <article class="panel chart-panel">
+                <div class="panel-heading"><div><p class="eyebrow">STORE PERFORMANCE</p><h2>Revenue over time</h2></div><span class="subtle-label">Last 6 months</span></div>
+                <div class="revenue-chart" id="revenue-chart" aria-label="Revenue over the last six months"></div>
+              </article>
+              <article class="panel">
+                <div class="panel-heading"><div><p class="eyebrow">NEEDS ATTENTION</p><h2>Recent enquiries</h2></div><button class="text-button" type="button" data-view="enquiries">View all ↗</button></div>
+                <div class="compact-list" id="recent-enquiries"></div>
+              </article>
+            </div>
+            <div class="dashboard-grid lower-grid">
+              <article class="panel">
+                <div class="panel-heading"><div><p class="eyebrow">WHAT'S SELLING</p><h2>Top products</h2></div><button class="text-button" type="button" data-view="store">Open store ↗</button></div>
+                <div class="compact-list" id="top-products"></div>
+              </article>
+              <article class="panel assistant-teaser">
+                <div class="assistant-icon">✳</div>
+                <div><p class="eyebrow">AI ASSISTANT</p><h2>Coming after setup</h2><p class="muted">AI is off until you choose a provider and approve how client data may be used.</p></div>
+                <button class="text-button" type="button" data-view="assistant">View details ↗</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="view-clients" data-view-panel="clients" hidden>
+            <div class="page-heading"><div><p class="eyebrow">RELATIONSHIPS & WORK</p><h1>Clients</h1><p class="muted">Contact details, active services, and account revenue.</p></div></div>
+            <div class="panel">
+              <div class="panel-heading"><div><h2>Client accounts</h2><p class="muted">Only records entered by you appear here.</p></div><button class="button button-secondary" type="button" data-toggle-form="client-form">+ Add client</button></div>
+              <div class="table-wrap"><table><thead><tr><th>Client</th><th>Contact</th><th>Services</th><th>Revenue</th><th>Last enquiry</th><th>Status</th><th></th></tr></thead><tbody id="clients-table"></tbody></table></div>
+              <p class="empty-state" id="clients-empty" hidden>No client accounts yet. Add your first client to get started.</p>
+            </div>
+            <details class="panel form-panel" id="client-form-panel">
+              <summary>Add a client account</summary>
+              <form class="form-grid" id="client-form">
+                <label>Name <input name="name" required maxlength="120"></label>
+                <label>Company <input name="company" maxlength="160"></label>
+                <label>Email <input name="email" type="email" maxlength="254"></label>
+                <label>Phone <input name="phone" type="tel" maxlength="40"></label>
+                <label class="span-two">Account notes <textarea name="notes" rows="3" maxlength="5000"></textarea></label>
+                <div class="form-actions span-two"><button class="button button-primary" type="submit">Save client</button></div>
+              </form>
+            </details>
+            <article class="panel" id="client-detail" hidden></article>
+            <details class="panel form-panel">
+              <summary>Add a service to the catalogue</summary>
+              <form class="form-grid" id="service-form">
+                <label>Service name <input name="name" required maxlength="120"></label>
+                <label>Default price <input name="default_price" type="number" min="0" step="0.01" value="0" required></label>
+                <label class="span-two">Description <textarea name="description" rows="2" maxlength="1000"></textarea></label>
+                <div class="form-actions span-two"><button class="button button-primary" type="submit">Add service</button></div>
+              </form>
+            </details>
+          </section>
+
+          <section class="view" id="view-store" data-view-panel="store" hidden>
+            <div class="page-heading"><div><p class="eyebrow">PRODUCTS & SALES</p><h1>Store</h1><p class="muted">Track products, record sales, and see what is moving.</p></div></div>
+            <article class="panel currency-panel">
+              <div><h2>Reporting currency</h2><p class="muted">Default: South African rand (ZAR). Changing this will not convert existing amounts; keep one currency for consistent reporting.</p></div>
+              <form class="currency-form" id="currency-form"><label for="currency-code">ISO code</label><input id="currency-code" name="currency" value="ZAR" maxlength="3" pattern="[A-Za-z]{3}" required><button class="button button-secondary" type="submit">Save currency</button></form>
+            </article>
+            <div class="metric-grid" id="store-metrics"></div>
+            <div class="dashboard-grid">
+              <article class="panel">
+                <div class="panel-heading"><div><h2>Product catalogue</h2><p class="muted">Create products and optional stock tracking.</p></div></div>
+                <form class="form-grid compact-form" id="product-form">
+                  <label>Product name <input name="name" required maxlength="160"></label>
+                  <label>SKU <input name="sku" maxlength="80"></label>
+                  <label>Price <input name="price" type="number" min="0" step="0.01" required></label>
+                  <label>Stock quantity <input name="stock_quantity" type="number" min="0" step="1" value="0"></label>
+                  <label class="check-label"><input name="track_inventory" type="checkbox"> Track inventory</label>
+                  <div class="form-actions span-two"><button class="button button-primary" type="submit">Add product</button></div>
+                </form>
+                <div class="table-wrap"><table><thead><tr><th>Product</th><th>Price</th><th>Stock</th><th>Sold</th><th>Revenue</th></tr></thead><tbody id="products-table"></tbody></table></div>
+                <p class="empty-state" id="products-empty" hidden>No products yet.</p>
+              </article>
+              <article class="panel">
+                <div class="panel-heading"><div><h2>Record a sale</h2><p class="muted">This records an admin-entered sale; no payment is processed.</p></div></div>
+                <form class="form-grid compact-form" id="sale-form">
+                  <label>Product <select name="product_id" id="sale-product" required></select></label>
+                  <label>Quantity <input name="quantity" type="number" min="1" step="1" value="1" required></label>
+                  <label>Client account <select name="client_id" id="sale-client"><option value="">Unlinked sale</option></select></label>
+                  <label>Customer name (if unlinked) <input name="customer_name" maxlength="120"></label>
+                  <label>Customer email (if unlinked) <input name="customer_email" type="email" maxlength="254"></label>
+                  <div class="form-actions span-two"><button class="button button-primary" type="submit">Record sale</button></div>
+                </form>
+                <div class="table-wrap"><table><thead><tr><th>Date</th><th>Customer / client</th><th>Items</th><th>Total</th></tr></thead><tbody id="sales-table"></tbody></table></div>
+                <p class="empty-state" id="sales-empty" hidden>No sales recorded yet.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="view" id="view-suppliers" data-view-panel="suppliers" hidden>
+            <div class="page-heading"><div><p class="eyebrow">PURCHASING & FULFILMENT</p><h1>Suppliers</h1><p class="muted">Keep supplier contacts and build custom, itemized supply orders.</p></div></div>
+            <div class="dashboard-grid">
+              <article class="panel">
+                <div class="panel-heading"><div><h2>Supplier directory</h2><p class="muted">Supplier contacts are private to the admin area.</p></div></div>
+                <form class="form-grid compact-form" id="supplier-form">
+                  <label>Supplier name <input name="name" required maxlength="160"></label>
+                  <label>Contact name <input name="contact_name" maxlength="120"></label>
+                  <label>Email <input name="email" type="email" maxlength="254"></label>
+                  <label>Phone <input name="phone" type="tel" maxlength="40"></label>
+                  <label class="span-two">Notes <textarea name="notes" rows="2" maxlength="2000"></textarea></label>
+                  <div class="form-actions span-two"><button class="button button-primary" type="submit">Add supplier</button></div>
+                </form>
+                <div class="compact-list" id="suppliers-list"></div>
+                <p class="empty-state" id="suppliers-empty" hidden>No suppliers added yet.</p>
+              </article>
+              <article class="panel">
+                <div class="panel-heading"><div><h2>Custom supply order</h2><p class="muted">Build an order from any combination of items.</p></div></div>
+                <form id="supply-order-form">
+                  <div class="form-grid compact-form">
+                    <label>Supplier <select name="supplier_id" id="supply-supplier" required></select></label>
+                    <label>Reference <input name="reference" maxlength="100" placeholder="Optional"></label>
+                    <label>Needed by <input name="needed_by" type="date"></label>
+                    <label>Notes <input name="notes" maxlength="2000"></label>
+                  </div>
+                  <div class="order-items-heading"><strong>Order items</strong><button class="text-button" id="add-order-item" type="button">+ Add item</button></div>
+                  <div id="order-items" class="order-items"></div>
+                  <div class="form-actions"><button class="button button-primary" type="submit">Create supply order</button></div>
+                </form>
+              </article>
+            </div>
+            <article class="panel">
+              <div class="panel-heading"><div><h2>Supply orders</h2><p class="muted">Draft, submitted, received, and cancelled orders.</p></div></div>
+              <div class="table-wrap"><table><thead><tr><th>Reference</th><th>Supplier</th><th>Items</th><th>Total</th><th>Needed by</th><th>Status</th></tr></thead><tbody id="supply-orders-table"></tbody></table></div>
+              <p class="empty-state" id="supply-orders-empty" hidden>No supply orders yet.</p>
+            </article>
+          </section>
+
+          <section class="view" id="view-enquiries" data-view-panel="enquiries" hidden>
+            <div class="page-heading"><div><p class="eyebrow">CUSTOMER MESSAGES</p><h1>Enquiries</h1><p class="muted">New website enquiries arrive here for review and follow-up.</p></div></div>
+            <article class="panel">
+              <div class="panel-heading"><div><h2>Enquiry inbox</h2><p class="muted">Priority is rule-based until an AI provider is configured.</p></div><select id="inquiry-filter" aria-label="Filter enquiries"><option value="">All enquiries</option><option value="new">New</option><option value="in_progress">In progress</option><option value="converted">Converted</option><option value="closed">Closed</option></select></div>
+              <div class="table-wrap"><table><thead><tr><th>Received</th><th>Person</th><th>Interested in</th><th>Message</th><th>Priority</th><th>Status</th></tr></thead><tbody id="inquiries-table"></tbody></table></div>
+              <p class="empty-state" id="inquiries-empty" hidden>No enquiries yet. Website form submissions will appear here.</p>
+            </article>
+          </section>
+
+          <section class="view" id="view-alerts" data-view-panel="alerts" hidden>
+            <div class="page-heading"><div><p class="eyebrow">IMPORTANT UPDATES</p><h1>Alerts</h1><p class="muted">Priority enquiries create in-app alerts; external channels activate when configured.</p></div><button class="button button-secondary" id="enable-push" type="button">Enable browser push</button></div>
+            <div class="channel-grid" id="channel-status"></div>
+            <article class="panel">
+              <div class="panel-heading"><div><h2>Notification history</h2><p class="muted">Client details are intentionally excluded from lock-screen alert text.</p></div><button class="text-button" id="mark-alerts-read" type="button">Mark all read</button></div>
+              <div class="compact-list" id="notifications-list"></div>
+              <p class="empty-state" id="notifications-empty" hidden>No alerts yet.</p>
+            </article>
+          </section>
+
+          <section class="view" id="view-assistant" data-view-panel="assistant" hidden>
+            <div class="page-heading"><div><p class="eyebrow">ASSISTED OPERATIONS</p><h1>AI assistant</h1><p class="muted">AI stays off until you decide how it may use client information.</p></div></div>
+            <article class="panel assistant-disabled">
+              <div class="assistant-icon">✳</div>
+              <p class="eyebrow">NOT CONNECTED</p>
+              <h2>No client data is being sent to an LLM.</h2>
+              <p class="muted">You chose to build the dashboard first. When you are ready, choose an AI provider and a data-access policy. The assistant can then summarize enquiries and draft follow-ups, with your approval before it sends messages or creates orders.</p>
+              <span class="status-pill status-neutral">AI disabled by owner choice</span>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
+  </body>
+</html>

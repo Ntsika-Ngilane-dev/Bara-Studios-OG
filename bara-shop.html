@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5ebdd">
+    <meta name="description" content="The Bara Shop collection is taking shape.">
+    <title>Bara Shop — Bara Studios</title>
+    <link rel="icon" href="jk.jpeg" type="image/jpeg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+    <script src="shop.js" defer></script>
+    <script src="pwa.js" defer></script>
+  </head>
+  <body class="shop-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="index.html" aria-label="Bara Studios home">
+          <img class="wordmark-icon" src="jk.jpeg" alt="">
+          <span class="wordmark-name">BARA <span>STUDIOS</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="sr-only">Open navigation</span><span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+          <a href="index.html#services">What we do</a>
+          <a href="index.html#about">Our story</a>
+          <a href="index.html#values">Our approach</a>
+          <a href="shop.html" aria-current="page">Shop</a>
+          <a class="nav-cta" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="shop-detail section-shell shop-detail-bara">
+        <a class="shop-back" href="shop.html"><span aria-hidden="true">←</span> All shops</a>
+        <div class="shop-detail-art">
+          <span class="detail-ring" aria-hidden="true"></span>
+          <img src="jk.jpeg" alt="Bara the capybara mascot">
+          <span class="detail-spark detail-spark-one" aria-hidden="true">✳</span>
+          <span class="detail-spark detail-spark-two" aria-hidden="true">✦</span>
+        </div>
+        <div class="shop-detail-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> THE BARA SHOP</p>
+          <h1>Good things<br>are <em>growing.</em></h1>
+          <p>We’re putting together a thoughtful collection of Bara Studios merch and little everyday favorites. Check back soon to see what’s taking shape.</p>
+          <span class="coming-badge"><span></span> COLLECTION IN PROGRESS</span>
+          <div class="shop-detail-actions">
+            <a class="button button-dark" href="shop.html">Explore both shops <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="index.html">Back to Bara Studios</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-main section-shell">
+        <a class="wordmark footer-wordmark" href="index.html" aria-label="Bara Studios home">
+          <img class="wordmark-icon" src="jk.jpeg" alt="">
+          <span class="wordmark-name">BARA <span>STUDIOS</span></span>
+        </a>
+        <p>Creative. Code. Create impact.<br><span>Always creating. Always growing.</span></p>
+        <a class="footer-up" href="shop.html">All shops <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-bottom section-shell">
+        <span>© <span class="current-year"></span> Bara Studios</span>
+        <span>Made with care, and a little capybara calm.</span>
+        <span class="social-handle">@barastudios</span>
+      </div>
+    </footer>
+  </body>
+</html>
