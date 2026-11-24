@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5ebdd">
+    <meta name="description" content="The Thingy by Bara Studios. Shop local or apply to supply.">
+    <title>The Thingy — Bara Studios</title>
+    <link rel="icon" href="jk.jpeg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="the-thingy.css">
+    <script src="the-thingy.js?v=2" defer></script>
+  </head>
+  <body class="shop-page thingy-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="index.html" aria-label="Bara Studios home">
+          <img class="wordmark-icon" src="jk.jpeg" alt="">
+          <span class="wordmark-name">BARA <span>STUDIOS</span></span>
+        </a>
+        <nav class="thingy-nav" aria-label="Store navigation">
+          <a href="shop.html">All shops</a>
+          <a href="index.html">Bara Studios <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="thingy-hero" id="home">
+        <div class="thingy-hero-inner">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE LOCAL, A LITTLE LOVELY</p>
+          <h1>The <em>Thingy.</em></h1>
+          <p>Good things happen when great people and great products find each other.</p>
+          <span class="thingy-stamp" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="thingy-screen thingy-home section-shell" data-screen="home">
+        <div class="thingy-choice-grid">
+          <button class="thingy-choice thingy-choice-supply" type="button" data-go="supply">
+            <span class="thingy-choice-number">01 / FOR OUR PARTNERS</span>
+            <span class="thingy-choice-icon" aria-hidden="true">✳</span>
+            <span class="thingy-choice-title">Supply</span>
+            <span class="thingy-choice-copy">Have something lovely to share? Tell us about your products and how we can work together.</span>
+            <span class="thingy-choice-link">Apply to supply <span aria-hidden="true">↗</span></span>
+          </button>
+          <button class="thingy-choice thingy-choice-buy" type="button" data-go="branches">
+            <span class="thingy-choice-number">02 / FOR OUR COMMUNITY</span>
+            <span class="thingy-choice-icon" aria-hidden="true">↗</span>
+            <span class="thingy-choice-title">Buy</span>
+            <span class="thingy-choice-copy">Find your nearest branch, browse the menu, and choose pickup or delivery.</span>
+            <span class="thingy-choice-link">Find your branch <span aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+        <p class="thingy-home-note"><span></span> A Bara Studios kind of marketplace <span></span></p>
+      </section>
+
+      <section class="thingy-screen section-shell" data-screen="supply" hidden>
+        <button class="thingy-back" type="button" data-go="home">← Back to The Thingy</button>
+        <div class="flow-heading">
+          <p class="eyebrow">LET’S MAKE SOMETHING GOOD</p>
+          <h2>Become a <em>supplier.</em></h2>
+          <p>Share a little about you and what you make. Our team will be in touch to talk through the details.</p>
+        </div>
+        <form class="thingy-form supply-form" id="supply-form">
+          <div class="form-section-title"><span>01</span><h3>Your details</h3></div>
+          <div class="thingy-form-grid">
+            <label>Business or trading name<input name="businessName" autocomplete="organization" required placeholder="Your brand name"></label>
+            <label>Contact person<input name="contactName" autocomplete="name" required placeholder="Full name"></label>
+            <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+            <label>Phone number<input name="phone" type="tel" autocomplete="tel" required placeholder="+27"></label>
+            <label>Website or social link <span class="optional">(optional)</span><input name="website" type="url" placeholder="https://"></label>
+            <label>Business location<input name="location" autocomplete="address-level2" required placeholder="Town or city"></label>
+          </div>
+
+          <div class="form-section-title"><span>02</span><h3>What you supply</h3></div>
+          <div class="thingy-form-grid">
+            <label>Product or range name<input name="productName" required placeholder="What would you like to supply?"></label>
+            <label>Product category
+              <select name="category" required>
+                <option value="">Choose a category</option>
+                <option>Food &amp; drink</option><option>Home &amp; lifestyle</option><option>Fashion &amp; accessories</option>
+                <option>Art &amp; gifts</option><option>Wellness</option><option>Other</option>
+              </select>
+            </label>
+            <label>Wholesale price per unit (ZAR)<input name="wholesalePrice" type="number" min="0" step="0.01" required placeholder="0.00"></label>
+            <label>Suggested retail price (ZAR)<input name="retailPrice" type="number" min="0" step="0.01" required placeholder="0.00"></label>
+            <label>Minimum order quantity<input name="minimumOrder" type="number" min="1" step="1" required placeholder="e.g. 12"></label>
+            <label>Typical lead time<input name="leadTime" required placeholder="e.g. 5 business days"></label>
+            <label class="form-wide">Tell us about your products<textarea name="productDetails" rows="4" required placeholder="What makes them special? Include sizes, flavours, materials, or variants."></textarea></label>
+            <label class="form-wide">Anything else we should know? <span class="optional">(optional)</span><textarea name="notes" rows="3" placeholder="Certifications, delivery details, sample availability…"></textarea></label>
+          </div>
+          <p class="thingy-demo-note">Supplier applications are a preview in this demo and aren’t sent or stored yet.</p>
+          <button class="button button-dark thingy-submit" type="submit">Send supplier application <span aria-hidden="true">↗</span></button>
+          <p class="thingy-status" id="supply-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="thingy-screen section-shell" data-screen="branches" hidden>
+        <button class="thingy-back" type="button" data-go="home">← Back to The Thingy</button>
+        <div class="flow-heading">
+          <p class="eyebrow">GOOD THINGS, CLOSE BY</p>
+          <h2>Choose your <em>branch.</em></h2>
+          <p>Select the place you’d like to order from.</p>
+        </div>
+        <div class="branch-grid" id="branch-list"></div>
+        <p class="thingy-demo-note centered">Choose one of our 13 branches.</p>
+      </section>
+
+      <section class="thingy-screen section-shell" data-screen="login" hidden>
+        <button class="thingy-back" type="button" data-go="branches">← Change branch</button>
+        <div class="flow-heading">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h2>Your local <em>Thingy.</em></h2>
+          <p class="selected-branch-label" id="selected-branch-label"></p>
+        </div>
+        <form class="thingy-form login-form" id="login-form">
+          <label>Customer name<input name="name" autocomplete="name" required placeholder="Your name"></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" required placeholder="The number on your account"></label>
+          <p class="thingy-demo-note">Preview only: this form does not verify against Lightspeed or save your details.</p>
+          <button class="button button-dark thingy-submit" type="submit">Continue to the menu <span aria-hidden="true">→</span></button>
+          <p class="thingy-status" id="login-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="thingy-screen section-shell" data-screen="store" hidden>
+        <div class="store-topline">
+          <div><p class="eyebrow">FROM YOUR LOCAL BRANCH</p><h2 id="store-branch-name">The menu.</h2></div>
+          <button class="cart-button" type="button" data-open-cart aria-label="Open shopping basket">
+            Basket <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </div>
+        <p class="thingy-demo-note store-demo-note">Sample menu for preview. Product names, prices, and stock are not synced with Lightspeed yet.</p>
+        <div class="category-tabs" id="category-tabs" role="group" aria-label="Filter menu categories"></div>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="thingy-screen section-shell" data-screen="checkout" hidden>
+        <button class="thingy-back" type="button" data-go="store">← Back to menu</button>
+        <div class="flow-heading">
+          <p class="eyebrow">ALMOST YOURS</p>
+          <h2>Make it <em>yours.</em></h2>
+          <p id="checkout-branch-label"></p>
+        </div>
+        <div class="checkout-layout">
+          <form class="thingy-form checkout-form" id="checkout-form">
+            <fieldset>
+              <legend>How would you like it?</legend>
+              <label class="option-card"><input type="radio" name="fulfilment" value="pickup" checked><span><strong>Pick up</strong><small>Collect from your selected branch whenever you’re ready.</small></span></label>
+              <label class="option-card"><input type="radio" name="fulfilment" value="delivery"><span><strong>Delivery</strong><small>Share your Uber or Bolt ride link so the branch can follow the trip.</small></span></label>
+            </fieldset>
+            <div class="delivery-fields" id="delivery-fields" hidden>
+              <label>Uber or Bolt ride link<input name="rideLink" type="url" placeholder="Paste your ride or tracking link"></label>
+              <p class="thingy-demo-note">Only share a link you’re comfortable sharing with this branch. No ride tracking occurs in preview mode.</p>
+            </div>
+            <fieldset>
+              <legend>Choose a payment method</legend>
+              <div class="payment-grid">
+                <label class="payment-option"><input type="radio" name="payment" value="payat" required><span>Pay@</span></label>
+                <label class="payment-option"><input type="radio" name="payment" value="samsung-pay"><span>Samsung Pay</span></label>
+                <label class="payment-option"><input type="radio" name="payment" value="google-pay"><span>Google Pay</span></label>
+                <label class="payment-option"><input type="radio" name="payment" value="qr"><span>QR payment</span></label>
+              </div>
+            </fieldset>
+            <p class="thingy-demo-note">Payments are not processed in this preview. A live checkout needs a payment-provider integration.</p>
+            <button class="button button-dark thingy-submit" type="submit">Place preview order <span aria-hidden="true">↗</span></button>
+            <p class="thingy-status" id="checkout-status" role="status" aria-live="polite"></p>
+          </form>
+          <aside class="order-summary" aria-label="Order summary">
+            <h3>Your basket</h3>
+            <div id="checkout-items"></div>
+            <div class="summary-total"><span>Total</span><strong id="checkout-total">R0.00</strong></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+    <aside class="cart-panel" id="cart-panel" aria-label="Shopping basket" aria-hidden="true" hidden>
+      <div class="cart-panel-heading"><div><p class="eyebrow">YOUR GOOD THINGS</p><h2>Your basket</h2></div><button type="button" class="cart-close" data-close-cart aria-label="Close basket">×</button></div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-panel-footer"><div class="summary-total"><span>Subtotal</span><strong id="cart-total">R0.00</strong></div><button class="button button-dark" type="button" data-go-checkout>Continue to checkout <span aria-hidden="true">→</span></button></div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="footer-main section-shell">
+        <a class="wordmark footer-wordmark" href="index.html" aria-label="Bara Studios home"><img class="wordmark-icon" src="jk.jpeg" alt=""><span class="wordmark-name">BARA <span>STUDIOS</span></span></a>
+        <p>Creative. Code. Create impact.<br><span>Always creating. Always growing.</span></p>
+        <a class="footer-up" href="shop.html">All shops <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-bottom section-shell">
+        <span>© <span class="current-year"></span> Bara Studios</span>
+        <span>Made with care, and a little capybara calm.</span>
+        <span class="social-handle">@barastudios</span>
+      </div>
+    </footer>
+  </body>
+</html>

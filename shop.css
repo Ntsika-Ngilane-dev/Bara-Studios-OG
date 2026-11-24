@@ -48,6 +48,13 @@
 .shop-choice-canna .choice-overline { color: #536449; }
 .shop-choice-canna .choice-orbit { color: #83965d; }
 .shop-choice-services { grid-column: 1 / -1; width: min(587px, 100%); justify-self: center; }
+.shop-choice-thingy { grid-column: 1 / -1; width: min(587px, 100%); justify-self: center; }
+.shop-choice-thingy .choice-art { color: var(--olive-dark); background: #e9eadb; }
+.shop-choice-thingy .choice-art::before { border-color: rgba(77, 99, 54, .24); }
+.shop-choice-thingy .choice-overline { color: var(--olive-dark); }
+.shop-choice-thingy .choice-orbit { color: var(--olive); }
+.thingy-mark { position: relative; z-index: 1; width: 61%; height: auto; color: var(--olive-dark); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.shop-choice:hover .thingy-mark { transform: scale(1.06) rotate(-4deg); }
 .shop-choice-services .choice-art { color: var(--cocoa); background: #eee3d7; }
 .shop-choice-services .choice-art::before { border-color: rgba(139, 94, 60, .24); }
 .shop-choice-services .choice-overline { color: var(--cocoa); }
